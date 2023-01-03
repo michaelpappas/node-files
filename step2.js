@@ -3,6 +3,7 @@
 const fsP = require("fs/promises");
 const axios = require("axios")
 
+/* use axios to return the first 20 characters of a url html */
 async function webCat(path){
   try{
     const resp = await axios.get(path);
@@ -14,6 +15,7 @@ async function webCat(path){
   }
 }
 
+/** return the contents of a the text file in the argument */
 async function cat(path){
   try{
     let content = await fsP.readFile(path, "utf8");
